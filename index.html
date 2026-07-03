@@ -383,12 +383,81 @@
 </div>
 
 <script>
+const SHEET='https://docs.google.com/spreadsheets/d/e/2PACX-1vRgWvFMdG8qluiTxKjvcXMjQcrh2gB4LklvQX-gPFRq3hxA8JKAP0lpVMBzNInSHVAJu5Hjd59OIEUz/pub?gid=0&single=true&output=csv';
+
+function parseCSV(t){
+  const m={};
+  t.trim().split('\n').forEach(r=>{
+    const c=r.split(',');
+    if(c.length>=2){const k=c[0].trim().replace(/"/g,'');const v=c.slice(1).join(',').trim().replace(/"/g,'');m[k]=v;}
+  });
+  return m;
+}
+
+function setBar(i,num,max){
+  const rows=document.querySelectorAll('.bar-row');
+  const r=rows[i];if(!r||!num)return;
+  const n=parseInt(num)||0,m=parseInt(max)||n||1;
+  r.querySelector('.bar-num').textContent=num;
+  r.querySelector('.bar-fill').style.width=Math.round(n/m*100)+'%';
+}
+
+async function loadData(){
+  try{
+    const res=await fetch(SHEET+'&t='+Date.now());
+    const text=await res.text();
+    const d=parseCSV(text);
+
+    document.querySelectorAll('.kpi-val').forEach((el,i)=>{
+      const keys=['utilizadores_ativos','receita_total','paises','produtos_vivos'];
+      if(d[keys[i]])el.textContent=d[keys[i]];
+    });
+
+    document.querySelectorAll('.mcard-val').forEach((el,i)=>{
+      const keys=['utilizadores_ativos','paises','receita_total','produtos_vivos'];
+      if(d[keys[i]])el.textContent=d[keys[i]];
+    });
+
+    const tr=document.querySelectorAll('.pcard:nth-child(1) .prow span:last-child');
+    if(tr[0]&&d.triply_ativos_28d)tr[0].textContent=d.triply_ativos_28d;
+    if(tr[1]&&d.triply_paises)tr[1].textContent=d.triply_paises;
+    if(tr[2]&&d.triply_receita)tr[2].textContent=d.triply_receita;
+    if(tr[3]&&d.triply_cac)tr[3].textContent=d.triply_cac;
+
+    const detT=document.querySelectorAll('#det-t .dcell-v');
+    if(detT[0]&&d.triply_ativos_28d)detT[0].textContent=d.triply_ativos_28d;
+    if(detT[1]&&d.triply_novos)detT[1].textContent=d.triply_novos;
+    if(detT[2]&&d.triply_paises)detT[2].textContent=d.triply_paises;
+    if(detT[3]&&d.triply_sessao)detT[3].textContent=d.triply_sessao;
+    if(detT[4]&&d.triply_receita)detT[4].textContent=d.triply_receita;
+    if(detT[5]&&d.triply_cac)detT[5].textContent=d.triply_cac;
+
+    const detL=document.querySelectorAll('#det-l .dcell-v');
+    if(detL[0]&&d.laura_testers)detL[0].textContent=d.laura_testers;
+    if(detL[1]&&d.laura_testers)detL[1].textContent=d.laura_testers+' / 1 dia';
+
+    const detO=document.querySelectorAll('#det-o .dcell-v');
+    if(detO[0]&&d.onfoot_testers)detO[0].textContent=d.onfoot_testers;
+
+    const mc=parseInt(d.canal_direct)||1;
+    setBar(0,d.canal_direct,mc);setBar(1,d.canal_social,mc);setBar(2,d.canal_search,mc);
+    setBar(3,d.canal_referral,mc);setBar(4,d.canal_ai,mc);setBar(5,d.canal_paid,mc);
+
+    if(d.data_update){
+      document.querySelectorAll('.sec-label').forEach(el=>{
+        if(el.textContent.includes('dados reais'))el.textContent='Ecosystem metrics · real data · '+d.data_update;
+      });
+      document.querySelectorAll('.footer span').forEach(el=>{
+        if(el.textContent.includes('Data updated'))el.textContent='Built solo · Zero external funding · Data updated '+d.data_update;
+      });
+    }
+  }catch(e){console.warn('Sheet load failed:',e);}
+}
+
 function showView(v){
   document.getElementById('view-pub').style.display=v==='pub'?'block':'none';
   document.getElementById('view-priv').style.display=v==='priv'?'block':'none';
-  document.querySelectorAll('.nav-tab').forEach((b,i)=>{
-    b.className='nav-tab '+(i===(v==='pub'?0:1)?'on':'off');
-  });
+  document.querySelectorAll('.nav-tab').forEach((b,i)=>{b.className='nav-tab '+(i===(v==='pub'?0:1)?'on':'off');});
 }
 const PC={t:'#12C6D8',l:'#0077C8',o:'#0077C8'};
 function switchP(p){
@@ -399,6 +468,8 @@ function switchP(p){
     tab.style.color=id===p?'#fff':'#6b7b8c';
   });
 }
+
+loadData();
 </script>
 </body>
 </html>
