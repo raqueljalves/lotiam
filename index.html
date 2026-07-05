@@ -47,9 +47,9 @@
     .hero-tagline{font-size:11px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;font-weight:600}
     .hero-desc{font-size:15px;color:#5a6675;max-width:520px;margin:18px auto 28px;line-height:1.8;font-weight:400}
     .hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-    .hero-pill{font-size:11px;padding:5px 14px;border-radius:14px;border:1px solid var(--border);color:var(--muted);background:#fff;font-weight:500}
+    .hero-pill{font-size:11px;padding:5px 14px;border-radius:14px;border:1px solid var(--border);color:var(--muted);background:#fff;font-weight:500;text-decoration:none;transition:all .2s}
+    .hero-pill:hover{border-color:var(--teal);color:var(--teal);background:#f0fbfd}
     .hero-pill::before{content:'● ';color:var(--teal);font-size:8px}
-
     /* TRANSMITE */
     .transmite{max-width:900px;margin:0 auto 40px;padding:28px 32px;border:1px solid var(--border);border-radius:20px;background:#fff}
     .t-title{text-align:center;font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.2em;margin-bottom:24px;text-transform:uppercase}
@@ -211,9 +211,9 @@
     </div>
     <div class="hero-desc">Laura AI, Triply and OnFoot — three live products, built solo, zero external funding. Real data. Real growth.</div>
     <div class="hero-pills">
-      <span class="hero-pill">triply.now</span>
-      <span class="hero-pill">someonetolisten.me</span>
-      <span class="hero-pill">OnFoot · Play Store</span>
+     <a class="hero-pill" href="https://triply.now" target="_blank">triply.now</a>
+     <a class="hero-pill" href="https://someonetolisten.me" target="_blank">someonetolisten.me</a>
+     <a class="hero-pill" href="https://play.google.com/store/apps/details?id=com.onfoot.app&hl=en" target="_blank">OnFoot · Play Store</a>
     </div>
   </div>
 
