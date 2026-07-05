@@ -3,56 +3,54 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lotiam  An Ecosystem Built for Solutions</title>
+  <title>Lotiam · An Ecosystem Built for Solutions</title>
   <meta name="description" content="Laura AI, Triply and OnFoot — three live products, built solo, no external funding."/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --navy:#082A5E;
-      --blue:#0077C8;
-      --teal:#12C6D8;
-      --gray:#f4f7fa;
-      --border:#e2e8f0;
-      --muted:#6b7b8c;
-      --text:#1a2635;
+      --navy:#082A5E;--blue:#0077C8;--teal:#12C6D8;
+      --gray:#f4f7fa;--border:#e2e8f0;--muted:#6b7b8c;--text:#1a2635;
     }
     body{font-family:'Poppins',system-ui,sans-serif;background:var(--gray);color:var(--text)}
 
-    /* ── LOGO ── */
-    .logo-wrap{display:flex;align-items:center;gap:14px;font-family:'Poppins',sans-serif;text-decoration:none}
-    .logo-icon{font-size:32px;line-height:1}
-    .logo-text{display:flex;align-items:baseline;gap:0;line-height:1}
+    /* LOGO */
+    .logo-wrap{display:flex;align-items:center;gap:14px;text-decoration:none}
     .logo-bold{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
-    .logo-dot{font-size:28px;font-weight:800;color:var(--teal)}
-    .logo-light{font-size:18px;font-weight:300;color:var(--navy);letter-spacing:.01em}
     .logo-sub{font-size:8px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:2px;font-weight:400}
+    .svg-ico{display:inline-flex;align-items:center;justify-content:center}
 
-    /* ── NAV ── */
+    /* NAV */
     .nav{background:#fff;border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px}
     .nav-tabs{display:flex;gap:6px}
     .nav-tab{padding:8px 20px;border-radius:20px;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:'Poppins',sans-serif;transition:all .2s}
     .nav-tab.on{background:var(--navy);color:#fff}
     .nav-tab.off{background:var(--gray);color:var(--muted)}
 
-    /* ── VIEWS ── */
-    #view-pub{display:block}
-    #view-priv{display:none}
+    /* LOGIN OVERLAY */
+    .login-overlay{position:fixed;inset:0;background:rgba(8,42,94,.92);z-index:200;display:flex;align-items:center;justify-content:center}
+    .login-box{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:380px;text-align:center}
+    .login-logo{margin-bottom:20px}
+    .login-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px}
+    .login-sub{font-size:12px;color:var(--muted);margin-bottom:24px}
+    .login-input{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;outline:none;margin-bottom:12px;transition:border .2s}
+    .login-input:focus{border-color:var(--teal)}
+    .login-btn{width:100%;padding:12px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;transition:background .2s}
+    .login-btn:hover{background:var(--blue)}
+    .login-error{font-size:12px;color:#dc2626;margin-top:8px;display:none}
 
-    /* ── HERO ── */
+    /* HERO */
     .hero{text-align:center;padding:64px 20px 52px;background:linear-gradient(180deg,#fff 0%,var(--gray) 100%)}
     .hero-logo{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:24px}
-    .hero-logo-text{display:flex;align-items:baseline;gap:0;line-height:1}
+    .hero-logo-text{display:flex;align-items:baseline;line-height:1}
     .hero-bold{font-size:64px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
-    .hero-dot{font-size:64px;font-weight:800;color:var(--teal)}
-    .hero-light{font-size:42px;font-weight:300;color:var(--navy)}
     .hero-tagline{font-size:11px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;font-weight:600}
     .hero-desc{font-size:15px;color:#5a6675;max-width:520px;margin:18px auto 28px;line-height:1.8;font-weight:400}
     .hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     .hero-pill{font-size:11px;padding:5px 14px;border-radius:14px;border:1px solid var(--border);color:var(--muted);background:#fff;font-weight:500}
     .hero-pill::before{content:'● ';color:var(--teal);font-size:8px}
 
-    /* ── TRANSMITE ── */
+    /* TRANSMITE */
     .transmite{max-width:900px;margin:0 auto 40px;padding:28px 32px;border:1px solid var(--border);border-radius:20px;background:#fff}
     .t-title{text-align:center;font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.2em;margin-bottom:24px;text-transform:uppercase}
     .t-grid{display:grid;grid-template-columns:repeat(5,1fr)}
@@ -62,18 +60,18 @@
     .t-name{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3}
     .t-desc{font-size:10px;color:var(--muted);line-height:1.5;font-weight:400}
 
-    /* ── SECTION ── */
+    /* SECTION */
     .section{max-width:900px;margin:0 auto;padding:0 20px 40px}
     .sec-label{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
 
-    /* ── METRICS ── */
+    /* METRICS */
     .m4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:32px}
     .mcard{background:#fff;border:1px solid var(--border);border-top:3px solid var(--teal);border-radius:14px;padding:20px;text-align:center}
     .mcard-val{font-size:28px;font-weight:800;color:var(--navy)}
     .mcard-label{font-size:11px;color:var(--muted);margin-top:5px;font-weight:500}
     .mcard-note{font-size:10px;color:var(--teal);margin-top:3px;font-weight:600}
 
-    /* ── PRODUCTS ── */
+    /* PRODUCTS */
     .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
     .pcard{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
     .pcard-h{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
@@ -87,7 +85,7 @@
     .prow span:last-child{font-weight:700;color:var(--navy)}
     .prow .hi{color:var(--teal)}
 
-    /* ── TWO COL ── */
+    /* TWO COL */
     .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
     .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px}
     .panel-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:14px}
@@ -105,27 +103,43 @@
     .rev-tag{font-size:9px;padding:2px 7px;border-radius:8px;font-weight:700}
     .rev-total{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:2px solid var(--border)}
 
-    /* ── FOOTER ── */
-    .footer{text-align:center;padding:28px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:#fff;margin-top:20px;font-weight:400}
+    /* FOOTER */
+    .footer{text-align:center;padding:32px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:#fff;margin-top:20px;font-weight:400;line-height:2}
     .footer strong{color:var(--navy);font-weight:800}
+    .footer a{color:var(--blue);text-decoration:none;font-weight:500}
+    .footer a:hover{color:var(--teal)}
+    .footer-emails{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+    .footer-email{display:flex;align-items:center;gap:6px;font-size:12px}
 
-    /* ── PRIVATE ── */
-    .priv-wrap{max-width:900px;margin:0 auto;padding:24px 20px}
+    /* DASHBOARD */
+    .priv-wrap{max-width:960px;margin:0 auto;padding:24px 20px}
+    .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+    .dash-title{font-size:16px;font-weight:800;color:var(--navy)}
+    .dash-sub{font-size:11px;color:var(--muted);margin-top:2px}
+    .logout-btn{padding:6px 14px;border-radius:14px;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif}
+    .logout-btn:hover{border-color:var(--navy);color:var(--navy)}
     .kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
     .kpi{background:#fff;border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:16px}
     .kpi-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:600}
     .kpi-val{font-size:22px;font-weight:800;color:var(--navy)}
+
+    /* LOOKER */
+    .looker-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;background:#fff}
+    .looker-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .looker-head-title{font-size:13px;font-weight:700;color:var(--navy)}
+    .looker-head-sub{font-size:11px;color:var(--muted)}
+    .looker-head a{font-size:11px;color:var(--blue);text-decoration:none;font-weight:600}
+
+    /* ALERTS */
     .alerts{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden}
     .alerts-h{padding:13px 18px;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--navy)}
     .alert-row{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid #f5f7f8;font-size:12px}
     .alert-row:last-child{border:none}
-    .a-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+    .a-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .a-text{flex:1;color:#444;font-weight:400}
     .a-time{font-size:10px;color:var(--muted);white-space:nowrap}
-    .looker-box{background:#EBF9FB;border:1px solid #a8e6ed;border-radius:14px;padding:20px;margin-bottom:20px;text-align:center}
-    .looker-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
-    .looker-desc{font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.6;font-weight:400}
-    .looker-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:20px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;text-decoration:none}
+
+    /* PROD TABS */
     .prod-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
     .ptab{padding:7px 16px;border-radius:16px;border:none;cursor:pointer;font-size:12px;font-weight:600;transition:all .15s;font-family:'Poppins',sans-serif}
     .detail{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
@@ -136,58 +150,63 @@
     .dcell-l{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:500}
     .dcell-v{font-size:15px;font-weight:800;color:var(--navy)}
 
-    /* ── ÍCONES SVG ── */
-    .svg-ico{display:inline-flex;align-items:center;justify-content:center}
-
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media(max-width:640px){
-      .m4{grid-template-columns:repeat(2,1fr)}
+      .m4,.kpi4{grid-template-columns:repeat(2,1fr)}
       .p3{grid-template-columns:1fr}
       .two{grid-template-columns:1fr}
       .t-grid{grid-template-columns:repeat(2,1fr)}
       .t-item{border-right:none;border-bottom:1px solid var(--border);padding:12px 0}
       .t-item:last-child{border:none}
       .detail-grid{grid-template-columns:repeat(2,1fr)}
-      .kpi4{grid-template-columns:repeat(2,1fr)}
       .hero-bold{font-size:42px}
-      .hero-dot{font-size:42px}
-      .hero-light{font-size:28px}
       .nav{padding:12px 16px}
     }
   </style>
 </head>
 <body>
 
+<!-- LOGIN OVERLAY -->
+<div class="login-overlay" id="login-overlay" style="display:none">
+  <div class="login-box">
+    <div class="login-logo">
+      <span class="svg-ico" style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#12C6D8,#0077C8);display:inline-flex">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
+      </span>
+    </div>
+    <div class="login-title">Dashboard interno</div>
+    <div class="login-sub">Acesso restrito · Apenas utilizadores autorizados</div>
+    <input class="login-input" type="password" id="pass-input" placeholder="Palavra-passe" onkeydown="if(event.key==='Enter')checkPass()"/>
+    <button class="login-btn" onclick="checkPass()">Entrar</button>
+    <div class="login-error" id="login-error">Palavra-passe incorreta. Tenta novamente.</div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
-  <a class="logo-wrap" href="#">
-    <span class="logo-icon svg-ico" style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#12C6D8,#0077C8)">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 1[...]
+  <a class="logo-wrap" href="#" onclick="showView('pub')">
+    <span class="svg-ico" style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#12C6D8,#0077C8)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
     </span>
     <div>
-      <div class="logo-text">
-        <span class="logo-bold">Lotiam</span>
-      </div>
+      <div class="logo-bold">Lotiam</div>
       <div class="logo-sub">An Ecosystem Built for Solutions</div>
     </div>
   </a>
   <div class="nav-tabs">
-    <button class="nav-tab on" onclick="showView('pub')">Open Startup</button>
-    <button class="nav-tab off" onclick="showView('priv')">Dashboard</button>
+    <button class="nav-tab on" id="btn-pub" onclick="showView('pub')">Open Startup</button>
+    <button class="nav-tab off" id="btn-priv" onclick="requestDash()">Dashboard</button>
   </div>
 </nav>
 
 <!-- ═══ VISTA PÚBLICA ═══ -->
 <div id="view-pub">
-
   <div class="hero">
     <div class="hero-logo">
       <span class="svg-ico" style="width:80px;height:80px;border-radius:22px;background:linear-gradient(135deg,#12C6D8,#0077C8);box-shadow:0 20px 40px -16px rgba(0,119,200,.6)">
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3[...]
+        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
       </span>
-      <div class="hero-logo-text">
-        <span class="hero-bold">Lotiam</span>
-      </div>
+      <div class="hero-logo-text"><span class="hero-bold">Lotiam</span></div>
       <div class="hero-tagline">An Ecosystem Built for Solutions</div>
     </div>
     <div class="hero-desc">Laura AI, Triply and OnFoot — three live products, built solo, zero external funding. Real data. Real growth.</div>
@@ -201,11 +220,11 @@
   <div class="transmite">
     <div class="t-title">O que transmite · Lotiam</div>
     <div class="t-grid">
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12[...]
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" [...]
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4"/><pa[...]
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.[...]
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12[...]
+      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.7 2.8 2.7 14 0 16.8M12 3.6c-2.7 2.8-2.7 14 0 16.8"/></svg></div><div class="t-name">Ecossistema Global &amp; Integrado</div><div class="t-desc">Conecta e gere os 3 produtos como um só.</div></div>
+      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" r="3.1"/><path d="M3.7 19c0-3.2 2.4-5.3 5.3-5.3s5.3 2.1 5.3 5.3"/><path d="M16 5.5a3 3 0 0 1 0 5.4M17.4 13.6c2.2.5 3.9 2.3 3.9 5"/></svg></div><div class="t-name">Foco Pessoal Empowerment</div><div class="t-desc">Capacita utilizadores através de soluções intuitivas.</div></div>
+      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4M4 20h16M7 15.5l3.6-4 3 2.6L20 7M16.4 7H20v3.4"/></svg></div><div class="t-name">Crescimento Sustentável</div><div class="t-desc">Impulsiona resultados transparentes e escaláveis.</div></div>
+      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.5" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M7.5 15.7 10.9 7.9M13.1 7.9 16.5 15.7M8.2 17.5h7.6"/></svg></div><div class="t-name">Inovação Digital</div><div class="t-desc">Conexões inteligentes e eficientes entre ferramentas.</div></div>
+      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#0077C8" stroke="none"/></svg></div><div class="t-name">Propósito Claro</div><div class="t-desc">Eficiência e qualidade com impacto real.</div></div>
     </div>
   </div>
 
@@ -274,24 +293,42 @@
       </div>
       <div class="panel">
         <div class="panel-title">Receita de afiliados · histórico</div>
-        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</spa[...]
-        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo · GYG</div><div class="rev-meta">GetYourGuide · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94[...]
-        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span cl[...]
-        <div class="rev-row"><div><div class="rev-desc">Kayak CPC · Voos</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span cl[...]
-        <div class="rev-total"><span style="font-size:13px;font-weight:700;color:var(--navy)">Total confirmado</span><span style="font-size:17px;font-weight:800;color:var(--teal)">$31.86</span></[...]
+        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo · GYG</div><div class="rev-meta">GetYourGuide · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Kayak CPC · Voos</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#FFF3E0;color:#854F0B">pendente</span></div></div>
+        <div class="rev-total"><span style="font-size:13px;font-weight:700;color:var(--navy)">Total confirmado</span><span style="font-size:17px;font-weight:800;color:var(--teal)">$31.86</span></div>
       </div>
     </div>
   </div>
 
   <footer class="footer">
     <strong>Lotiam</strong> · An Ecosystem Built for Solutions<br>
-    <span style="margin-top:4px;display:block">Built solo · Zero external funding · Data updated Jun 29, 2026</span>
+    <div class="footer-emails">
+      <div class="footer-email">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <a href="mailto:support@lotiam.dev">support@lotiam.dev</a>
+      </div>
+      <div class="footer-email">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <a href="mailto:investors@lotiam.dev">investors@lotiam.dev</a>
+      </div>
+    </div>
+    <span style="display:block;margin-top:8px">Built solo · Zero external funding · Data updated Jun 29, 2026</span>
   </footer>
 </div>
 
 <!-- ═══ DASHBOARD INTERNO ═══ -->
 <div id="view-priv" style="display:none">
   <div class="priv-wrap">
+
+    <div class="dash-header">
+      <div>
+        <div class="dash-title">Dashboard interno · Lotiam</div>
+        <div class="dash-sub">Dados em tempo real · Acesso restrito</div>
+      </div>
+      <button class="logout-btn" onclick="logout()">Sair →</button>
+    </div>
 
     <div class="kpi4">
       <div class="kpi"><div class="kpi-label">Utilizadores totais</div><div class="kpi-val">172</div></div>
@@ -300,28 +337,37 @@
       <div class="kpi"><div class="kpi-label">Produtos vivos</div><div class="kpi-val">3/3</div></div>
     </div>
 
-    <div class="alerts">
-      <div class="alerts-h">Atividade recente</div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap=[...]
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap=[...]
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#FFF3E0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap=[...]
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap=[...]
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap=[...]
+    <!-- LOOKER STUDIO -->
+    <div class="looker-wrap">
+      <div class="looker-head">
+        <div>
+          <div class="looker-head-title">Google Analytics · Triply · dados ao vivo</div>
+          <div class="looker-head-sub">Atualizado automaticamente pelo Looker Studio</div>
+        </div>
+        <a href="https://datastudio.google.com/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083" target="_blank">Abrir em ecrã completo ↗</a>
+      </div>
+      <iframe
+        width="100%"
+        height="500"
+        src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F"
+        frameborder="0"
+        style="border:0;display:block"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
     </div>
 
-    <div class="looker-box">
-      <div style="margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid var(--border)">
-        <iframe 
-          width="100%" 
-          height="450" 
-          src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F" 
-          frameborder="0" 
-          style="border:0;display:block" 
-          allowfullscreen 
-          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-       </iframe>
-     </div>
+    <!-- ALERTAS -->
+    <div class="alerts">
+      <div class="alerts-h">⚡ Atividade recente</div>
+      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 1-5 3 2.2 3 5 3.5 5 1.5 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div><div class="a-text">Comissão confirmada · $2.32 · Excursão Ibiza · Booking</div><div class="a-time">Abr 2026</div></div>
+      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg></div><div class="a-text">134 novos utilizadores no Triply · últimos 28 dias</div><div class="a-time">Jun 2026</div></div>
+      <div class="alert-row"><div class="a-icon svg-ico" style="background:#FFF3E0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h4l1 2h9l-2 4 2 4H10l-1-2H5"/></svg></div><div class="a-text">OnFoot aprovado para produção · Play Store</div><div class="a-time">Jun 2026</div></div>
+      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 1-5 3 2.2 3 5 3.5 5 1.5 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div><div class="a-text">Harry Potter Tokyo · $7.94 · GetYourGuide confirmado</div><div class="a-time">Mai 2026</div></div>
+      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg></div><div class="a-text">21 utilizadores Laura · teste Google Ads em 1 dia</div><div class="a-time">Mai 2026</div></div>
+    </div>
 
+    <!-- TABS POR PRODUTO -->
     <div class="prod-tabs">
       <button class="ptab" id="tab-t" style="background:#12C6D8;color:#fff" onclick="switchP('t')">Triply</button>
       <button class="ptab" id="tab-l" style="background:#f4f7fa;color:#6b7b8c" onclick="switchP('l')">Laura AI</button>
@@ -371,10 +417,10 @@
       </div>
       <div class="panel">
         <div class="panel-title">Receita · histórico completo</div>
-        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</spa[...]
-        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo</div><div class="rev-meta">GYG · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span cla[...]
-        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span cl[...]
-        <div class="rev-row"><div><div class="rev-desc">Kayak CPC</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev[...]
+        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo</div><div class="rev-meta">GYG · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Kayak CPC</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#FFF3E0;color:#854F0B">pendente</span></div></div>
         <div class="rev-total"><span style="font-weight:700;color:var(--navy)">Total</span><span style="font-size:16px;font-weight:800;color:var(--teal)">$31.86</span></div>
       </div>
     </div>
@@ -383,6 +429,58 @@
 </div>
 
 <script>
+// ── PASSWORD ─────────────────────────────────────────────────────────────────
+const PASS = 'lotiam2026';
+
+function requestDash(){
+  if(sessionStorage.getItem('lotiam_auth')==='ok'){
+    showView('priv');
+  } else {
+    document.getElementById('login-overlay').style.display='flex';
+    setTimeout(()=>document.getElementById('pass-input').focus(),100);
+  }
+}
+
+function checkPass(){
+  const v=document.getElementById('pass-input').value;
+  if(v===PASS){
+    sessionStorage.setItem('lotiam_auth','ok');
+    document.getElementById('login-overlay').style.display='none';
+    document.getElementById('pass-input').value='';
+    document.getElementById('login-error').style.display='none';
+    showView('priv');
+  } else {
+    document.getElementById('login-error').style.display='block';
+    document.getElementById('pass-input').value='';
+    document.getElementById('pass-input').focus();
+  }
+}
+
+function logout(){
+  sessionStorage.removeItem('lotiam_auth');
+  showView('pub');
+}
+
+// ── NAVEGAÇÃO ─────────────────────────────────────────────────────────────────
+function showView(v){
+  document.getElementById('view-pub').style.display=v==='pub'?'block':'none';
+  document.getElementById('view-priv').style.display=v==='priv'?'block':'none';
+  document.getElementById('btn-pub').className='nav-tab '+(v==='pub'?'on':'off');
+  document.getElementById('btn-priv').className='nav-tab '+(v==='priv'?'on':'off');
+}
+
+// ── TABS PRODUTO ──────────────────────────────────────────────────────────────
+const PC={t:'#12C6D8',l:'#0077C8',o:'#0077C8'};
+function switchP(p){
+  ['t','l','o'].forEach(id=>{
+    document.getElementById('det-'+id).style.display=id===p?'block':'none';
+    const tab=document.getElementById('tab-'+id);
+    tab.style.background=id===p?PC[id]:'#f4f7fa';
+    tab.style.color=id===p?'#fff':'#6b7b8c';
+  });
+}
+
+// ── GOOGLE SHEETS (atualização automática da vista pública) ───────────────────
 const SHEET='https://docs.google.com/spreadsheets/d/e/2PACX-1vRgWvFMdG8qluiTxKjvcXMjQcrh2gB4LklvQX-gPFRq3hxA8JKAP0lpVMBzNInSHVAJu5Hjd59OIEUz/pub?gid=0&single=true&output=csv';
 
 function parseCSV(t){
@@ -394,82 +492,31 @@ function parseCSV(t){
   return m;
 }
 
-function setBar(i,num,max){
-  const rows=document.querySelectorAll('.bar-row');
-  const r=rows[i];if(!r||!num)return;
-  const n=parseInt(num)||0,m=parseInt(max)||n||1;
-  r.querySelector('.bar-num').textContent=num;
-  r.querySelector('.bar-fill').style.width=Math.round(n/m*100)+'%';
-}
-
 async function loadData(){
   try{
     const res=await fetch(SHEET+'&t='+Date.now());
     const text=await res.text();
     const d=parseCSV(text);
-
-    document.querySelectorAll('.kpi-val').forEach((el,i)=>{
-      const keys=['utilizadores_ativos','receita_total','paises','produtos_vivos'];
-      if(d[keys[i]])el.textContent=d[keys[i]];
-    });
-
-    document.querySelectorAll('.mcard-val').forEach((el,i)=>{
-      const keys=['utilizadores_ativos','paises','receita_total','produtos_vivos'];
-      if(d[keys[i]])el.textContent=d[keys[i]];
-    });
-
+    const mvals=document.querySelectorAll('.mcard-val');
+    const mkeys=['utilizadores_ativos','paises','receita_total','produtos_vivos'];
+    mvals.forEach((el,i)=>{if(d[mkeys[i]])el.textContent=d[mkeys[i]];});
+    const kvals=document.querySelectorAll('.kpi-val');
+    const kkeys=['utilizadores_ativos','receita_total','paises','produtos_vivos'];
+    kvals.forEach((el,i)=>{if(d[kkeys[i]])el.textContent=d[kkeys[i]];});
     const tr=document.querySelectorAll('.pcard:nth-child(1) .prow span:last-child');
     if(tr[0]&&d.triply_ativos_28d)tr[0].textContent=d.triply_ativos_28d;
     if(tr[1]&&d.triply_paises)tr[1].textContent=d.triply_paises;
     if(tr[2]&&d.triply_receita)tr[2].textContent=d.triply_receita;
-    if(tr[3]&&d.triply_cac)tr[3].textContent=d.triply_cac;
-
     const detT=document.querySelectorAll('#det-t .dcell-v');
     if(detT[0]&&d.triply_ativos_28d)detT[0].textContent=d.triply_ativos_28d;
     if(detT[1]&&d.triply_novos)detT[1].textContent=d.triply_novos;
-    if(detT[2]&&d.triply_paises)detT[2].textContent=d.triply_paises;
-    if(detT[3]&&d.triply_sessao)detT[3].textContent=d.triply_sessao;
     if(detT[4]&&d.triply_receita)detT[4].textContent=d.triply_receita;
-    if(detT[5]&&d.triply_cac)detT[5].textContent=d.triply_cac;
-
-    const detL=document.querySelectorAll('#det-l .dcell-v');
-    if(detL[0]&&d.laura_testers)detL[0].textContent=d.laura_testers;
-    if(detL[1]&&d.laura_testers)detL[1].textContent=d.laura_testers+' / 1 dia';
-
-    const detO=document.querySelectorAll('#det-o .dcell-v');
-    if(detO[0]&&d.onfoot_testers)detO[0].textContent=d.onfoot_testers;
-
-    const mc=parseInt(d.canal_direct)||1;
-    setBar(0,d.canal_direct,mc);setBar(1,d.canal_social,mc);setBar(2,d.canal_search,mc);
-    setBar(3,d.canal_referral,mc);setBar(4,d.canal_ai,mc);setBar(5,d.canal_paid,mc);
-
     if(d.data_update){
-      document.querySelectorAll('.sec-label').forEach(el=>{
-        if(el.textContent.includes('dados reais'))el.textContent='Ecosystem metrics · real data · '+d.data_update;
-      });
       document.querySelectorAll('.footer span').forEach(el=>{
         if(el.textContent.includes('Data updated'))el.textContent='Built solo · Zero external funding · Data updated '+d.data_update;
       });
     }
   }catch(e){console.warn('Sheet load failed:',e);}
-}
-
-function showView(v){
-  document.getElementById('view-pub').style.display=v==='pub'?'block':'none';
-  document.getElementById('view-priv').style.display=v==='priv'?'block':'none';
-  document.querySelectorAll('.nav-tab').forEach((b,i)=>{
-    b.className='nav-tab '+(i===(v==='pub'?0:1)?'on':'off');
-  });
-}
-
-const PC={t:'#12C6D8',l:'#0077C8',o:'#0077C8'};
-function switchP(p){
-  ['t','l','o'].forEach(id=>{
-    document.getElementById('det-'+id).style.display=id===p?'block':'none';
-    const tab=document.getElementById('tab-'+id);
-    tab.style.background=id===p?PC[id]:'#f4f7fa';
-    tab.style.color=id===p?'#fff':'#6b7b8c';
-  });
 }
 
 loadData();
