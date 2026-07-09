@@ -9,71 +9,81 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --navy:#082A5E;--blue:#0077C8;--teal:#12C6D8;
-      --gray:#f4f7fa;--border:#e2e8f0;--muted:#6b7b8c;--text:#1a2635;
+      --green:#064650;
+      --green-light:#0a5f6e;
+      --green-dark:#043038;
+      --gold:#D4941A;
+      --gold-light:#f5c842;
+      --gray:#f4f7fa;
+      --border:#e2e8f0;
+      --muted:#6b7b8c;
+      --text:#1a2635;
+      --white:#ffffff;
     }
     body{font-family:'Poppins',system-ui,sans-serif;background:var(--gray);color:var(--text)}
 
-    /* LOGO */
-    .logo-wrap{display:flex;align-items:center;gap:14px;text-decoration:none}
-    .logo-bold{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
-    .logo-sub{font-size:8px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:2px;font-weight:400}
-    .svg-ico{display:inline-flex;align-items:center;justify-content:center}
-
     /* NAV */
-    .nav{background:#fff;border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px}
-    .nav-tabs{display:flex;gap:6px}
+    .nav{background:var(--green);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px}
+    .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo-img{width:42px;height:42px;border-radius:10px;object-fit:cover}
+    .logo-text-wrap{display:flex;flex-direction:column}
+    .logo-name{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-.02em;line-height:1}
+    .logo-sub{font-size:8px;letter-spacing:.16em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:2px}
+    .nav-tabs{display:flex;gap:8px}
     .nav-tab{padding:8px 20px;border-radius:20px;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:'Poppins',sans-serif;transition:all .2s}
-    .nav-tab.on{background:var(--navy);color:#fff}
-    .nav-tab.off{background:var(--gray);color:var(--muted)}
+    .nav-tab.on{background:var(--gold);color:var(--green-dark)}
+    .nav-tab.off{background:rgba(255,255,255,.15);color:var(--white)}
+    .nav-tab.off:hover{background:rgba(255,255,255,.25)}
 
-    /* LOGIN OVERLAY */
-    .login-overlay{position:fixed;inset:0;background:rgba(8,42,94,.92);z-index:200;display:flex;align-items:center;justify-content:center}
-    .login-box{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:380px;text-align:center}
+    /* LOGIN */
+    .login-overlay{position:fixed;inset:0;background:rgba(4,48,56,.95);z-index:200;display:flex;align-items:center;justify-content:center}
+    .login-box{background:var(--white);border-radius:20px;padding:40px;width:100%;max-width:380px;text-align:center}
     .login-logo{margin-bottom:20px}
-    .login-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px}
+    .login-logo img{width:64px;height:64px;border-radius:16px}
+    .login-title{font-size:18px;font-weight:800;color:var(--green);margin-bottom:6px}
     .login-sub{font-size:12px;color:var(--muted);margin-bottom:24px}
     .login-input{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-family:'Poppins',sans-serif;outline:none;margin-bottom:12px;transition:border .2s}
-    .login-input:focus{border-color:var(--teal)}
-    .login-btn{width:100%;padding:12px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;transition:background .2s}
-    .login-btn:hover{background:var(--blue)}
+    .login-input:focus{border-color:var(--gold)}
+    .login-btn{width:100%;padding:12px;background:var(--green);color:var(--white);border:none;border-radius:10px;font-size:14px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;transition:background .2s}
+    .login-btn:hover{background:var(--green-light)}
     .login-error{font-size:12px;color:#dc2626;margin-top:8px;display:none}
 
     /* HERO */
-    .hero{text-align:center;padding:64px 20px 52px;background:linear-gradient(180deg,#fff 0%,var(--gray) 100%)}
-    .hero-logo{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:24px}
-    .hero-logo-text{display:flex;align-items:baseline;line-height:1}
-    .hero-bold{font-size:64px;font-weight:800;color:var(--navy);letter-spacing:-.03em}
-    .hero-tagline{font-size:11px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;font-weight:600}
-    .hero-desc{font-size:15px;color:#5a6675;max-width:520px;margin:18px auto 28px;line-height:1.8;font-weight:400}
+    .hero{text-align:center;padding:64px 20px 52px;background:linear-gradient(180deg,var(--green) 0%,var(--green-light) 40%,var(--gray) 100%)}
+    .hero-logo{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:24px}
+    .hero-logo img{width:90px;height:90px;border-radius:22px;box-shadow:0 20px 40px -16px rgba(0,0,0,.4)}
+    .hero-name{font-size:56px;font-weight:800;color:var(--white);letter-spacing:-.03em;line-height:1}
+    .hero-tagline{font-size:11px;letter-spacing:.22em;color:rgba(255,255,255,.7);text-transform:uppercase;font-weight:600}
+    .hero-desc{font-size:15px;color:rgba(255,255,255,.85);max-width:520px;margin:18px auto 28px;line-height:1.8;font-weight:400}
     .hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-    .hero-pill{font-size:11px;padding:5px 14px;border-radius:14px;border:1px solid var(--border);color:var(--muted);background:#fff;font-weight:500;text-decoration:none;transition:all .2s}
-    .hero-pill:hover{border-color:var(--teal);color:var(--teal);background:#f0fbfd}
-    .hero-pill::before{content:'● ';color:var(--teal);font-size:8px}
+    .hero-pill{font-size:11px;padding:6px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.3);color:var(--white);background:rgba(255,255,255,.12);font-weight:500;text-decoration:none;transition:all .2s}
+    .hero-pill:hover{background:var(--gold);border-color:var(--gold);color:var(--green-dark)}
+    .hero-pill::before{content:'● ';color:var(--gold);font-size:8px}
+
     /* TRANSMITE */
-    .transmite{max-width:900px;margin:0 auto 40px;padding:28px 32px;border:1px solid var(--border);border-radius:20px;background:#fff}
-    .t-title{text-align:center;font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.2em;margin-bottom:24px;text-transform:uppercase}
+    .transmite{max-width:900px;margin:0 auto 40px;padding:28px 32px;border:1px solid var(--border);border-radius:20px;background:var(--white)}
+    .t-title{text-align:center;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.2em;margin-bottom:24px;text-transform:uppercase}
     .t-grid{display:grid;grid-template-columns:repeat(5,1fr)}
     .t-item{text-align:center;padding:4px 12px;border-right:1px solid var(--border)}
     .t-item:last-child{border:none}
-    .t-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin:0 auto 12px;border-radius:14px;background:#eef6fc}
-    .t-name{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3}
+    .t-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin:0 auto 12px;border-radius:14px;background:#f0f8f0}
+    .t-name{font-size:11px;font-weight:700;color:var(--green);margin-bottom:4px;line-height:1.3}
     .t-desc{font-size:10px;color:var(--muted);line-height:1.5;font-weight:400}
 
     /* SECTION */
     .section{max-width:900px;margin:0 auto;padding:0 20px 40px}
-    .sec-label{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+    .sec-label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
 
     /* METRICS */
     .m4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:32px}
-    .mcard{background:#fff;border:1px solid var(--border);border-top:3px solid var(--teal);border-radius:14px;padding:20px;text-align:center}
-    .mcard-val{font-size:28px;font-weight:800;color:var(--navy)}
+    .mcard{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:14px;padding:20px;text-align:center}
+    .mcard-val{font-size:28px;font-weight:800;color:var(--green)}
     .mcard-label{font-size:11px;color:var(--muted);margin-top:5px;font-weight:500}
-    .mcard-note{font-size:10px;color:var(--teal);margin-top:3px;font-weight:600}
+    .mcard-note{font-size:10px;color:var(--gold);margin-top:3px;font-weight:600}
 
     /* PRODUCTS */
     .p3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
-    .pcard{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+    .pcard{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden}
     .pcard-h{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
     .pcard-name{font-size:16px;font-weight:800;letter-spacing:-.02em}
     .pcard-tag{font-size:11px;color:var(--muted);margin-top:3px;font-weight:400}
@@ -82,73 +92,96 @@
     .prow{display:flex;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:1px solid #f5f7f8}
     .prow:last-child{border:none}
     .prow span:first-child{color:var(--muted);font-weight:400}
-    .prow span:last-child{font-weight:700;color:var(--navy)}
-    .prow .hi{color:var(--teal)}
+    .prow span:last-child{font-weight:700;color:var(--green)}
+    .prow .hi{color:var(--gold)}
 
-    /* TWO COL */
+    /* TABELA ESTILO GEMINI */
+    .gtable-wrap{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:32px}
+    .gtable-head{background:var(--green);padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+    .gtable-head-title{font-size:14px;font-weight:700;color:var(--white)}
+    .gtable-head-sub{font-size:11px;color:rgba(255,255,255,.6)}
+    table{width:100%;border-collapse:collapse}
+    thead tr{background:#f8fafa}
+    thead th{padding:10px 16px;font-size:11px;font-weight:600;color:var(--muted);text-align:left;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.04em}
+    tbody tr{border-bottom:1px solid #f5f7f8;transition:background .15s}
+    tbody tr:last-child{border:none}
+    tbody tr:hover{background:#f8fafa}
+    tbody td{padding:12px 16px;font-size:13px;color:var(--text)}
+    .td-product{display:flex;align-items:center;gap:10px}
+    .td-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+    .td-name{font-weight:600;color:var(--green)}
+    .td-sub{font-size:11px;color:var(--muted);margin-top:1px}
+    .td-status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:10px}
+    .status-live{background:#e8f5e9;color:#2e7d32}
+    .status-growth{background:#fff8e1;color:#f57f17}
+    .status-launch{background:#fce4ec;color:#c62828}
+    .td-num{font-weight:700;color:var(--green)}
+    .td-gold{font-weight:700;color:var(--gold)}
+
+    /* BAR */
     .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
-    .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px}
-    .panel-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:14px}
+    .panel{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px}
+    .panel-title{font-size:12px;font-weight:700;color:var(--green);margin-bottom:14px}
     .bar-row{display:flex;align-items:center;padding:4px 0;font-size:12px}
     .bar-label{width:110px;color:#5a6675;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
     .bar-wrap{flex:1;height:5px;background:#f0f3f5;border-radius:3px;margin:0 10px}
-    .bar-fill{height:5px;border-radius:3px;background:var(--teal)}
+    .bar-fill{height:5px;border-radius:3px;background:var(--gold)}
     .bar-num{width:22px;text-align:right;color:var(--muted);font-size:11px;font-weight:600}
     .rev-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f5f7f8;gap:8px}
     .rev-row:last-of-type{border:none}
     .rev-desc{font-size:12px;color:#444;flex:1;font-weight:500}
     .rev-meta{font-size:10px;color:var(--muted);margin-top:2px;font-weight:400}
     .rev-right{display:flex;align-items:center;gap:6px;white-space:nowrap}
-    .rev-amt{font-size:13px;font-weight:800;color:var(--navy)}
+    .rev-amt{font-size:13px;font-weight:800;color:var(--green)}
     .rev-tag{font-size:9px;padding:2px 7px;border-radius:8px;font-weight:700}
     .rev-total{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:2px solid var(--border)}
 
     /* FOOTER */
-    .footer{text-align:center;padding:32px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:#fff;margin-top:20px;font-weight:400;line-height:2}
-    .footer strong{color:var(--navy);font-weight:800}
-    .footer a{color:var(--blue);text-decoration:none;font-weight:500}
-    .footer a:hover{color:var(--teal)}
+    .footer{text-align:center;padding:32px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:var(--white);margin-top:20px;font-weight:400;line-height:2}
+    .footer strong{color:var(--green);font-weight:800}
+    .footer a{color:var(--gold);text-decoration:none;font-weight:500}
+    .footer a:hover{color:var(--green)}
     .footer-emails{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:8px}
     .footer-email{display:flex;align-items:center;gap:6px;font-size:12px}
 
     /* DASHBOARD */
     .priv-wrap{max-width:960px;margin:0 auto;padding:24px 20px}
     .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
-    .dash-title{font-size:16px;font-weight:800;color:var(--navy)}
+    .dash-title{font-size:16px;font-weight:800;color:var(--green)}
     .dash-sub{font-size:11px;color:var(--muted);margin-top:2px}
-    .logout-btn{padding:6px 14px;border-radius:14px;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif}
-    .logout-btn:hover{border-color:var(--navy);color:var(--navy)}
+    .logout-btn{padding:6px 14px;border-radius:14px;border:1px solid var(--border);background:var(--white);color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif}
+    .logout-btn:hover{border-color:var(--green);color:var(--green)}
     .kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
-    .kpi{background:#fff;border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;padding:16px}
+    .kpi{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:16px}
     .kpi-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:600}
-    .kpi-val{font-size:22px;font-weight:800;color:var(--navy)}
+    .kpi-val{font-size:22px;font-weight:800;color:var(--green)}
 
     /* LOOKER */
-    .looker-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;background:#fff}
-    .looker-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-    .looker-head-title{font-size:13px;font-weight:700;color:var(--navy)}
-    .looker-head-sub{font-size:11px;color:var(--muted)}
-    .looker-head a{font-size:11px;color:var(--blue);text-decoration:none;font-weight:600}
+    .looker-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;background:var(--white)}
+    .looker-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--green)}
+    .looker-head-title{font-size:13px;font-weight:700;color:var(--white)}
+    .looker-head-sub{font-size:11px;color:rgba(255,255,255,.6)}
+    .looker-head a{font-size:11px;color:var(--gold);text-decoration:none;font-weight:600}
 
     /* ALERTS */
-    .alerts{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden}
-    .alerts-h{padding:13px 18px;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--navy)}
+    .alerts{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden}
+    .alerts-h{padding:13px 18px;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--green);background:#f8fafa}
     .alert-row{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid #f5f7f8;font-size:12px}
     .alert-row:last-child{border:none}
-    .a-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .a-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
     .a-text{flex:1;color:#444;font-weight:400}
     .a-time{font-size:10px;color:var(--muted);white-space:nowrap}
 
     /* PROD TABS */
     .prod-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
     .ptab{padding:7px 16px;border-radius:16px;border:none;cursor:pointer;font-size:12px;font-weight:600;transition:all .15s;font-family:'Poppins',sans-serif}
-    .detail{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
+    .detail{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
     .detail-grid{display:grid;grid-template-columns:repeat(3,1fr)}
     .dcell{padding:14px 18px;border-right:1px solid #f5f7f8;border-bottom:1px solid #f5f7f8}
     .dcell:nth-child(3n){border-right:none}
     .dcell:nth-child(n+4){border-bottom:none}
     .dcell-l{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:500}
-    .dcell-v{font-size:15px;font-weight:800;color:var(--navy)}
+    .dcell-v{font-size:15px;font-weight:800;color:var(--green)}
 
     /* RESPONSIVE */
     @media(max-width:640px){
@@ -159,37 +192,31 @@
       .t-item{border-right:none;border-bottom:1px solid var(--border);padding:12px 0}
       .t-item:last-child{border:none}
       .detail-grid{grid-template-columns:repeat(2,1fr)}
-      .hero-bold{font-size:42px}
+      .hero-name{font-size:38px}
       .nav{padding:12px 16px}
     }
   </style>
 </head>
 <body>
 
-<!-- LOGIN OVERLAY -->
+<!-- LOGIN -->
 <div class="login-overlay" id="login-overlay" style="display:none">
   <div class="login-box">
-    <div class="login-logo">
-      <span class="svg-ico" style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#12C6D8,#0077C8);display:inline-flex">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
-      </span>
-    </div>
-    <div class="login-title">Dashboard interno</div>
-    <div class="login-sub">Acesso restrito · Apenas utilizadores autorizados</div>
-    <input class="login-input" type="password" id="pass-input" placeholder="Palavra-passe" onkeydown="if(event.key==='Enter')checkPass()"/>
-    <button class="login-btn" onclick="checkPass()">Entrar</button>
-    <div class="login-error" id="login-error">Palavra-passe incorreta. Tenta novamente.</div>
+    <div class="login-logo"><img src="logo.png" alt="Lotiam"/></div>
+    <div class="login-title">Internal Dashboard</div>
+    <div class="login-sub">Restricted access · Authorized users only</div>
+    <input class="login-input" type="password" id="pass-input" placeholder="Password" onkeydown="if(event.key==='Enter')checkPass()"/>
+    <button class="login-btn" onclick="checkPass()">Sign In</button>
+    <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav class="nav">
   <a class="logo-wrap" href="#" onclick="showView('pub')">
-    <span class="svg-ico" style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#12C6D8,#0077C8)">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
-    </span>
-    <div>
-      <div class="logo-bold">Lotiam</div>
+    <img class="logo-img" src="logo.png" alt="Lotiam logo"/>
+    <div class="logo-text-wrap">
+      <div class="logo-name">Lotiam</div>
       <div class="logo-sub">An Ecosystem Built for Solutions</div>
     </div>
   </a>
@@ -201,88 +228,90 @@
 
 <!-- ═══ VISTA PÚBLICA ═══ -->
 <div id="view-pub">
+
   <div class="hero">
     <div class="hero-logo">
-      <span class="svg-ico" style="width:80px;height:80px;border-radius:22px;background:linear-gradient(135deg,#12C6D8,#0077C8);box-shadow:0 20px 40px -16px rgba(0,119,200,.6)">
-        <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/><path d="M4.6 7.5c4.4 2.3 10.4 2.3 14.8 0M4.6 16.5c4.4-2.3 10.4-2.3 14.8 0"/></svg>
-      </span>
-      <div class="hero-logo-text"><span class="hero-bold">Lotiam</span></div>
+      <img src="logo.png" alt="Lotiam" style="width:90px;height:90px;border-radius:22px;box-shadow:0 20px 40px -16px rgba(0,0,0,.4)"/>
+      <div class="hero-name">Lotiam</div>
       <div class="hero-tagline">An Ecosystem Built for Solutions</div>
     </div>
     <div class="hero-desc">Laura AI, Triply and OnFoot — three live products, built solo, zero external funding. Real data. Real growth.</div>
     <div class="hero-pills">
-     <a class="hero-pill" href="https://triply.now" target="_blank">triply.now</a>
-     <a class="hero-pill" href="https://someonetolisten.me" target="_blank">someonetolisten.me</a>
-     <a class="hero-pill" href="https://play.google.com/store/apps/details?id=com.onfoot.app&hl=en" target="_blank">OnFoot · Play Store</a>
+      <a class="hero-pill" href="https://triply.now" target="_blank">triply.now</a>
+      <a class="hero-pill" href="https://someonetolisten.me" target="_blank">someonetolisten.me</a>
+      <a class="hero-pill" href="https://play.google.com/store/apps/details?id=com.onfoot.app&hl=en" target="_blank">OnFoot · Play Store</a>
     </div>
   </div>
 
   <div class="transmite">
-    <div class="t-title">O que transmite · Lotiam</div>
+    <div class="t-title">What We Stand For · Lotiam</div>
     <div class="t-grid">
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.7 2.8 2.7 14 0 16.8M12 3.6c-2.7 2.8-2.7 14 0 16.8"/></svg></div><div class="t-name">Ecossistema Global &amp; Integrado</div><div class="t-desc">Conecta e gere os 3 produtos como um só.</div></div>
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" r="3.1"/><path d="M3.7 19c0-3.2 2.4-5.3 5.3-5.3s5.3 2.1 5.3 5.3"/><path d="M16 5.5a3 3 0 0 1 0 5.4M17.4 13.6c2.2.5 3.9 2.3 3.9 5"/></svg></div><div class="t-name">Foco Pessoal Empowerment</div><div class="t-desc">Capacita utilizadores através de soluções intuitivas.</div></div>
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4M4 20h16M7 15.5l3.6-4 3 2.6L20 7M16.4 7H20v3.4"/></svg></div><div class="t-name">Crescimento Sustentável</div><div class="t-desc">Impulsiona resultados transparentes e escaláveis.</div></div>
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.5" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M7.5 15.7 10.9 7.9M13.1 7.9 16.5 15.7M8.2 17.5h7.6"/></svg></div><div class="t-name">Inovação Digital</div><div class="t-desc">Conexões inteligentes e eficientes entre ferramentas.</div></div>
-      <div class="t-item"><div class="t-icon svg-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#0077C8" stroke="none"/></svg></div><div class="t-name">Propósito Claro</div><div class="t-desc">Eficiência e qualidade com impacto real.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.7 2.8 2.7 14 0 16.8M12 3.6c-2.7 2.8-2.7 14 0 16.8"/></svg></div><div class="t-name">Ecossistema Global & Integrado</div><div class="t-desc">Connects and manages all 3 products as one.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" r="3.1"/><path d="M3.7 19c0-3.2 2.4-5.3 5.3-5.3s5.3 2.1 5.3 5.3"/><path d="M16 5.5a3 3 0 0 1 0 5.4M17.4 13.6c2.2.5 3.9 2.3 3.9 5"/></svg></div><div class="t-name">Personal Focus &amp; Empowerment</div><div class="t-desc">Empowers users through intuitive solutions.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4M4 20h16M7 15.5l3.6-4 3 2.6L20 7M16.4 7H20v3.4"/></svg></div><div class="t-name">Sustainable Growth</div><div class="t-desc">Drives transparent and scalable results.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.5" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M7.5 15.7 10.9 7.9M13.1 7.9 16.5 15.7M8.2 17.5h7.6"/></svg></div><div class="t-name">Digital Innovation</div><div class="t-desc">Smart and efficient connections between tools.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#064650" stroke="none"/></svg></div><div class="t-name">Clear Purpose</div><div class="t-desc">Efficiency and quality with real impact.</div></div>
     </div>
   </div>
 
   <div class="section">
-    <div class="sec-label">Métricas do ecossistema · dados reais · Jun 2026</div>
+    <div class="sec-label">Ecosystem Metrics · Real Data · Jul 2026</div>
     <div class="m4">
-      <div class="mcard"><div class="mcard-val">172</div><div class="mcard-label">Utilizadores ativos</div><div class="mcard-note">3 produtos</div></div>
-      <div class="mcard"><div class="mcard-val">8+</div><div class="mcard-label">Países alcançados</div><div class="mcard-note">100% orgânico</div></div>
-      <div class="mcard"><div class="mcard-val">$31.86</div><div class="mcard-label">Receita confirmada</div><div class="mcard-note">afiliados</div></div>
-      <div class="mcard"><div class="mcard-val">3/3</div><div class="mcard-label">Produtos em produção</div><div class="mcard-note">Web + Android</div></div>
+      <div class="mcard"><div class="mcard-val">172</div><div class="mcard-label">Active Users</div><div class="mcard-note">3 products</div></div>
+      <div class="mcard"><div class="mcard-val">8+</div><div class="mcard-label">Countries Reached</div><div class="mcard-note">100% organic</div></div>
+      <div class="mcard"><div class="mcard-val">$31.86</div><div class="mcard-label">Confirmed Revenue</div><div class="mcard-note">affiliates</div></div>
+      <div class="mcard"><div class="mcard-val">3/3</div><div class="mcard-label">Products Live</div><div class="mcard-note">Web + Android</div></div>
     </div>
 
-    <div class="sec-label">Os três produtos</div>
-    <div class="p3">
-      <div class="pcard">
-        <div class="pcard-h">
-          <div><div class="pcard-name" style="color:#12C6D8">Triply</div><div class="pcard-tag">Rede social para viajantes</div></div>
-          <span class="pcard-badge" style="background:#E1F5EE;color:#0F6E56">Em crescimento</span>
-        </div>
-        <div class="pcard-b">
-          <div class="prow"><span>Utilizadores ativos (28d)</span><span class="hi">139</span></div>
-          <div class="prow"><span>Países</span><span>8+</span></div>
-          <div class="prow"><span>Receita afiliados</span><span class="hi">$31.86</span></div>
-          <div class="prow"><span>Custo de aquisição</span><span>$0</span></div>
-          <div class="prow"><span>Canal principal</span><span>Orgânico</span></div>
+    <!-- TABELA ESTILO GEMINI -->
+    <div class="sec-label">Product Status</div>
+    <div class="gtable-wrap">
+      <div class="gtable-head">
+        <div>
+          <div class="gtable-head-title">Produtos · visão geral</div>
+          <div class="gtable-head-sub">Updated Jul 2026</div>
         </div>
       </div>
-      <div class="pcard">
-        <div class="pcard-h">
-          <div><div class="pcard-name" style="color:#082A5E">Laura AI</div><div class="pcard-tag">Companhia emocional</div></div>
-          <span class="pcard-badge" style="background:#EBF3FB;color:#0077C8">Ao vivo</span>
-        </div>
-        <div class="pcard-b">
-          <div class="prow"><span>Teste Google Ads</span><span class="hi">21 / 1 dia</span></div>
-          <div class="prow"><span>Canal validado</span><span>Google Ads</span></div>
-          <div class="prow"><span>Motor IA</span><span>Claude API</span></div>
-          <div class="prow"><span>Plano mensal</span><span>€3.99</span></div>
-          <div class="prow"><span>Plano anual</span><span>€31.99</span></div>
-        </div>
-      </div>
-      <div class="pcard">
-        <div class="pcard-h">
-          <div><div class="pcard-name" style="color:#0077C8">OnFoot</div><div class="pcard-tag">Navegação pedestre</div></div>
-          <span class="pcard-badge" style="background:#FAECE7;color:#993C1D">Acabou de lançar</span>
-        </div>
-        <div class="pcard-b">
-          <div class="prow"><span>Testers diários</span><span class="hi">12</span></div>
-          <div class="prow"><span>Estado</span><span>Produção aprovada</span></div>
-          <div class="prow"><span>Plataforma</span><span>Android</span></div>
-          <div class="prow"><span>Diferenciador</span><span>Safety score</span></div>
-          <div class="prow"><span>Mapas</span><span>Mapbox</span></div>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Utilizadores</th>
+            <th>Revenue</th>
+            <th>Last Activity</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#e8f5f5">🧭</div><div><div class="td-name">Triply</div><div class="td-sub">triply.now</div></div></div></td>
+            <td><span class="td-num">139</span> <span style="font-size:11px;color:var(--muted)">(28d)</span></td>
+            <td><span class="td-gold">$31.86</span></td>
+            <td style="color:var(--muted);font-size:12px">Jun 28, 2026</td>
+            <td><span class="td-status status-growth">Growing</span></td>
+          </tr>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#f0f4ff">💬</div><div><div class="td-name">Laura AI</div><div class="td-sub">someonetolisten.me</div></div></div></td>
+            <td><span class="td-num">21</span> <span style="font-size:11px;color:var(--muted)">(teste)</span></td>
+            <td><span style="color:var(--muted);font-size:12px">€3.99/mês</span></td>
+            <td style="color:var(--muted);font-size:12px">Mai 2026</td>
+            <td><span class="td-status status-live">Live</span></td>
+          </tr>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#fff5e8">👣</div><div><div class="td-name">OnFoot</div><div class="td-sub">Play Store · Android</div></div></div></td>
+            <td><span class="td-num">12</span> <span style="font-size:11px;color:var(--muted)">(testers)</span></td>
+            <td><span style="color:var(--muted);font-size:12px">Coming soon</span></td>
+            <td style="color:var(--muted);font-size:12px">Jul 1, 2026</td>
+            <td><span class="td-status status-launch">Just launched</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
+    <!-- RECEITA -->
     <div class="two">
       <div class="panel">
-        <div class="panel-title">Triply — utilizadores por país</div>
+        <div class="panel-title">Triply — Users by Country</div>
         <div class="bar-row"><span class="bar-label">Netherlands</span><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><span class="bar-num">43</span></div>
         <div class="bar-row"><span class="bar-label">United States</span><div class="bar-wrap"><div class="bar-fill" style="width:49%"></div></div><span class="bar-num">21</span></div>
         <div class="bar-row"><span class="bar-label">India</span><div class="bar-wrap"><div class="bar-fill" style="width:19%"></div></div><span class="bar-num">8</span></div>
@@ -292,12 +321,12 @@
         <div class="bar-row"><span class="bar-label">Singapore</span><div class="bar-wrap"><div class="bar-fill" style="width:7%"></div></div><span class="bar-num">3</span></div>
       </div>
       <div class="panel">
-        <div class="panel-title">Receita de afiliados · histórico</div>
-        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo · GYG</div><div class="rev-meta">GetYourGuide · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Kayak CPC · Voos</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#FFF3E0;color:#854F0B">pendente</span></div></div>
-        <div class="rev-total"><span style="font-size:13px;font-weight:700;color:var(--navy)">Total confirmado</span><span style="font-size:17px;font-weight:800;color:var(--teal)">$31.86</span></div>
+        <div class="panel-title">Affiliate Revenue · History</div>
+        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo · GYG</div><div class="rev-meta">GetYourGuide · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Kayak CPC · Voos</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#fff8e1;color:#f57f17">pending</span></div></div>
+        <div class="rev-total"><span style="font-size:13px;font-weight:700;color:var(--green)">Total Confirmed</span><span style="font-size:17px;font-weight:800;color:var(--gold)">$31.86</span></div>
       </div>
     </div>
   </div>
@@ -305,16 +334,10 @@
   <footer class="footer">
     <strong>Lotiam</strong> · An Ecosystem Built for Solutions<br>
     <div class="footer-emails">
-      <div class="footer-email">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        <a href="mailto:support@lotiam.dev">support@lotiam.dev</a>
-      </div>
-      <div class="footer-email">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        <a href="mailto:investors@lotiam.dev">investors@lotiam.dev</a>
-      </div>
+      <div class="footer-email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg><a href="mailto:support@lotiam.dev">support@lotiam.dev</a></div>
+      <div class="footer-email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg><a href="mailto:investors@lotiam.dev">investors@lotiam.dev</a></div>
     </div>
-    <span style="display:block;margin-top:8px">Built solo · Zero external funding · Data updated Jun 29, 2026</span>
+    <span style="display:block;margin-top:8px">Built solo · Zero external funding · Data updated Jul 8, 2026</span>
   </footer>
 </div>
 
@@ -324,90 +347,130 @@
 
     <div class="dash-header">
       <div>
-        <div class="dash-title">Dashboard interno · Lotiam</div>
-        <div class="dash-sub">Dados em tempo real · Acesso restrito</div>
+        <div class="dash-title">Internal Dashboard · Lotiam</div>
+        <div class="dash-sub">Real-time data · Restricted access</div>
       </div>
-      <button class="logout-btn" onclick="logout()">Sair →</button>
+      <button class="logout-btn" onclick="logout()">Log out →</button>
     </div>
 
     <div class="kpi4">
-      <div class="kpi"><div class="kpi-label">Utilizadores totais</div><div class="kpi-val">172</div></div>
-      <div class="kpi"><div class="kpi-label">Receita confirmada</div><div class="kpi-val">$31.86</div></div>
-      <div class="kpi"><div class="kpi-label">Países</div><div class="kpi-val">8+</div></div>
-      <div class="kpi"><div class="kpi-label">Produtos vivos</div><div class="kpi-val">3/3</div></div>
+      <div class="kpi"><div class="kpi-label">Total Users</div><div class="kpi-val">172</div></div>
+      <div class="kpi"><div class="kpi-label">Confirmed Revenue</div><div class="kpi-val">$31.86</div></div>
+      <div class="kpi"><div class="kpi-label">Countries</div><div class="kpi-val">8+</div></div>
+      <div class="kpi"><div class="kpi-label">Live Products</div><div class="kpi-val">3/3</div></div>
     </div>
 
-    <!-- LOOKER STUDIO -->
+    <!-- LOOKER -->
     <div class="looker-wrap">
       <div class="looker-head">
         <div>
-          <div class="looker-head-title">Google Analytics · Triply · dados ao vivo</div>
-          <div class="looker-head-sub">Atualizado automaticamente pelo Looker Studio</div>
+          <div class="looker-head-title">Google Analytics · Triply · Live Data</div>
+          <div class="looker-head-sub">Auto-updated by Looker Studio</div>
         </div>
-        <a href="https://datastudio.google.com/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083" target="_blank">Abrir em ecrã completo ↗</a>
+        <a href="https://datastudio.google.com/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083" target="_blank">Open full screen ↗</a>
       </div>
-      <iframe
-        width="100%"
-        height="500"
-        src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F"
-        frameborder="0"
-        style="border:0;display:block"
-        allowfullscreen
-        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-      </iframe>
+      <iframe width="100%" height="500" src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F" frameborder="0" style="border:0;display:block" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 
     <!-- ALERTAS -->
     <div class="alerts">
-      <div class="alerts-h">⚡ Atividade recente</div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 1-5 3 2.2 3 5 3.5 5 1.5 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div><div class="a-text">Comissão confirmada · $2.32 · Excursão Ibiza · Booking</div><div class="a-time">Abr 2026</div></div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg></div><div class="a-text">134 novos utilizadores no Triply · últimos 28 dias</div><div class="a-time">Jun 2026</div></div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#FFF3E0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4h4l1 2h9l-2 4 2 4H10l-1-2H5"/></svg></div><div class="a-text">OnFoot aprovado para produção · Play Store</div><div class="a-time">Jun 2026</div></div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#E1F5EE"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 6.5c0-2-2.2-3-5-3s-5 1-5 3 2.2 3 5 3.5 5 1.5 5 3.5-2.2 3-5 3-5-1-5-3"/></svg></div><div class="a-text">Harry Potter Tokyo · $7.94 · GetYourGuide confirmado</div><div class="a-time">Mai 2026</div></div>
-      <div class="alert-row"><div class="a-icon svg-ico" style="background:#EBF3FB"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0077C8" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg></div><div class="a-text">21 utilizadores Laura · teste Google Ads em 1 dia</div><div class="a-time">Mai 2026</div></div>
+      <div class="alerts-h">⚡ Recent Activity</div>
+      <div class="alert-row"><div class="a-icon" style="background:#e8f5e9">💰</div><div class="a-text">Commission confirmed · $2.32 · Excursão Ibiza · Booking</div><div class="a-time">Abr 2026</div></div>
+      <div class="alert-row"><div class="a-icon" style="background:#e3f2fd">👤</div><div class="a-text">134 new users on Triply · last 28 days</div><div class="a-time">Jun 2026</div></div>
+      <div class="alert-row"><div class="a-icon" style="background:#fff8e1">🏁</div><div class="a-text">OnFoot approved for production · Play Store</div><div class="a-time">Jun 2026</div></div>
+      <div class="alert-row"><div class="a-icon" style="background:#e8f5e9">💰</div><div class="a-text">Harry Potter Tokyo · $7.94 · GetYourGuide confirmado</div><div class="a-time">Mai 2026</div></div>
+      <div class="alert-row"><div class="a-icon" style="background:#e3f2fd">👤</div><div class="a-text">21 Laura users · Google Ads test in 1 day</div><div class="a-time">Mai 2026</div></div>
+    </div>
+
+    <!-- TABELA INTERNA ESTILO GEMINI -->
+    <div class="gtable-wrap" style="margin-bottom:20px">
+      <div class="gtable-head">
+        <div>
+          <div class="gtable-head-title">Detailed Status · All Products</div>
+          <div class="gtable-head-sub">Manual data · update as needed</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Utilizadores</th>
+            <th>Revenue</th>
+            <th>Main Channel</th>
+            <th>Last Update</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#e8f5f5">🧭</div><div><div class="td-name">Triply</div><div class="td-sub">triply.now</div></div></div></td>
+            <td><span class="td-num">139</span></td>
+            <td><span class="td-gold">$31.86</span></td>
+            <td style="font-size:12px;color:var(--muted)">Organic</td>
+            <td style="color:var(--muted);font-size:12px">Jun 28, 2026</td>
+            <td><span class="td-status status-growth">Growing</span></td>
+          </tr>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#f0f4ff">💬</div><div><div class="td-name">Laura AI</div><div class="td-sub">someonetolisten.me</div></div></div></td>
+            <td><span class="td-num">21</span></td>
+            <td style="font-size:12px;color:var(--muted)">€3.99/mês</td>
+            <td style="font-size:12px;color:var(--muted)">Google Ads</td>
+            <td style="color:var(--muted);font-size:12px">Mai 2026</td>
+            <td><span class="td-status status-live">Live</span></td>
+          </tr>
+          <tr>
+            <td><div class="td-product"><div class="td-icon" style="background:#fff5e8">👣</div><div><div class="td-name">OnFoot</div><div class="td-sub">Play Store · Android</div></div></div></td>
+            <td><span class="td-num">12</span></td>
+            <td style="font-size:12px;color:var(--muted)">Coming soon</td>
+            <td style="font-size:12px;color:var(--muted)">Play Store</td>
+            <td style="color:var(--muted);font-size:12px">Jul 1, 2026</td>
+            <td><span class="td-status status-launch">Lançamento</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- TABS POR PRODUTO -->
     <div class="prod-tabs">
-      <button class="ptab" id="tab-t" style="background:#12C6D8;color:#fff" onclick="switchP('t')">Triply</button>
+      <button class="ptab" id="tab-t" style="background:#064650;color:#fff" onclick="switchP('t')">Triply</button>
       <button class="ptab" id="tab-l" style="background:#f4f7fa;color:#6b7b8c" onclick="switchP('l')">Laura AI</button>
       <button class="ptab" id="tab-o" style="background:#f4f7fa;color:#6b7b8c" onclick="switchP('o')">OnFoot</button>
     </div>
 
     <div class="detail" id="det-t">
       <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Utilizadores ativos (28d)</div><div class="dcell-v" style="color:#12C6D8">139</div></div>
-        <div class="dcell"><div class="dcell-l">Novos utilizadores</div><div class="dcell-v">134</div></div>
-        <div class="dcell"><div class="dcell-l">Países</div><div class="dcell-v">8+</div></div>
-        <div class="dcell"><div class="dcell-l">Tempo médio sessão</div><div class="dcell-v">1m 19s</div></div>
-        <div class="dcell"><div class="dcell-l">Receita afiliados</div><div class="dcell-v" style="color:#12C6D8">$31.86</div></div>
-        <div class="dcell"><div class="dcell-l">Custo de aquisição</div><div class="dcell-v">$0</div></div>
+        <div class="dcell"><div class="dcell-l">Active Users (28d)</div><div class="dcell-v" style="color:var(--gold)">139</div></div>
+        <div class="dcell"><div class="dcell-l">New Users</div><div class="dcell-v">134</div></div>
+        <div class="dcell"><div class="dcell-l">Countries</div><div class="dcell-v">8+</div></div>
+        <div class="dcell"><div class="dcell-l">Avg. Session Time</div><div class="dcell-v">1m 19s</div></div>
+        <div class="dcell"><div class="dcell-l">Receita afiliados</div><div class="dcell-v" style="color:var(--gold)">$31.86</div></div>
+        <div class="dcell"><div class="dcell-l">Acquisition Cost</div><div class="dcell-v">$0</div></div>
       </div>
     </div>
     <div class="detail" id="det-l" style="display:none">
       <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Utilizadores teste</div><div class="dcell-v" style="color:#0077C8">21</div></div>
-        <div class="dcell"><div class="dcell-l">Velocidade</div><div class="dcell-v">21 / 1 dia</div></div>
-        <div class="dcell"><div class="dcell-l">Canal validado</div><div class="dcell-v">Google Ads</div></div>
-        <div class="dcell"><div class="dcell-l">Plano mensal</div><div class="dcell-v">€3.99</div></div>
-        <div class="dcell"><div class="dcell-l">Plano anual</div><div class="dcell-v">€31.99</div></div>
-        <div class="dcell"><div class="dcell-l">Motor IA</div><div class="dcell-v">Claude API</div></div>
+        <div class="dcell"><div class="dcell-l">Test Users</div><div class="dcell-v" style="color:var(--gold)">21</div></div>
+        <div class="dcell"><div class="dcell-l">Speed</div><div class="dcell-v">21 / 1 dia</div></div>
+        <div class="dcell"><div class="dcell-l">Validated Channel</div><div class="dcell-v">Google Ads</div></div>
+        <div class="dcell"><div class="dcell-l">Monthly Plan</div><div class="dcell-v">€3.99</div></div>
+        <div class="dcell"><div class="dcell-l">Annual Plan</div><div class="dcell-v">€31.99</div></div>
+        <div class="dcell"><div class="dcell-l">AI Engine</div><div class="dcell-v">Claude API</div></div>
       </div>
     </div>
     <div class="detail" id="det-o" style="display:none">
       <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Testers diários</div><div class="dcell-v" style="color:#0077C8">12</div></div>
-        <div class="dcell"><div class="dcell-l">Estado</div><div class="dcell-v">Produção</div></div>
+        <div class="dcell"><div class="dcell-l">Daily Testers</div><div class="dcell-v" style="color:var(--gold)">12</div></div>
+        <div class="dcell"><div class="dcell-l">Estado</div><div class="dcell-v">Production</div></div>
         <div class="dcell"><div class="dcell-l">Plataforma</div><div class="dcell-v">Android</div></div>
         <div class="dcell"><div class="dcell-l">Mapas</div><div class="dcell-v">Mapbox</div></div>
-        <div class="dcell"><div class="dcell-l">Diferenciador</div><div class="dcell-v">Safety score</div></div>
-        <div class="dcell"><div class="dcell-l">Próximo passo</div><div class="dcell-v">Utilizadores reais</div></div>
+        <div class="dcell"><div class="dcell-l">Differentiator</div><div class="dcell-v">Safety score</div></div>
+        <div class="dcell"><div class="dcell-l">Next Step</div><div class="dcell-v">Real users</div></div>
       </div>
     </div>
 
     <div class="two">
       <div class="panel">
-        <div class="panel-title">Triply — canais de aquisição</div>
+        <div class="panel-title">Triply — Acquisition Channels</div>
         <div class="bar-row"><span class="bar-label">Direct</span><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><span class="bar-num">99</span></div>
         <div class="bar-row"><span class="bar-label">Organic Social</span><div class="bar-wrap"><div class="bar-fill" style="width:48%"></div></div><span class="bar-num">48</span></div>
         <div class="bar-row"><span class="bar-label">Organic Search</span><div class="bar-wrap"><div class="bar-fill" style="width:47%"></div></div><span class="bar-num">47</span></div>
@@ -416,12 +479,12 @@
         <div class="bar-row"><span class="bar-label">Paid Search</span><div class="bar-wrap"><div class="bar-fill" style="width:1%"></div></div><span class="bar-num">1</span></div>
       </div>
       <div class="panel">
-        <div class="panel-title">Receita · histórico completo</div>
-        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo</div><div class="rev-meta">GYG · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#E1F5EE;color:#0F6E56">pronto</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Kayak CPC</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#FFF3E0;color:#854F0B">pendente</span></div></div>
-        <div class="rev-total"><span style="font-weight:700;color:var(--navy)">Total</span><span style="font-size:16px;font-weight:800;color:var(--teal)">$31.86</span></div>
+        <div class="panel-title">Revenue · Full History</div>
+        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo</div><div class="rev-meta">GYG · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
+        <div class="rev-row"><div><div class="rev-desc">Kayak CPC</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#fff8e1;color:#f57f17">pending</span></div></div>
+        <div class="rev-total"><span style="font-weight:700;color:var(--green)">Total</span><span style="font-size:16px;font-weight:800;color:var(--gold)">$31.86</span></div>
       </div>
     </div>
 
@@ -429,18 +492,11 @@
 </div>
 
 <script>
-// ── PASSWORD ─────────────────────────────────────────────────────────────────
-const PASS = 'lotiam2026';
-
+const PASS='lotiam2026';
 function requestDash(){
-  if(sessionStorage.getItem('lotiam_auth')==='ok'){
-    showView('priv');
-  } else {
-    document.getElementById('login-overlay').style.display='flex';
-    setTimeout(()=>document.getElementById('pass-input').focus(),100);
-  }
+  if(sessionStorage.getItem('lotiam_auth')==='ok'){showView('priv');}
+  else{document.getElementById('login-overlay').style.display='flex';setTimeout(()=>document.getElementById('pass-input').focus(),100);}
 }
-
 function checkPass(){
   const v=document.getElementById('pass-input').value;
   if(v===PASS){
@@ -455,22 +511,14 @@ function checkPass(){
     document.getElementById('pass-input').focus();
   }
 }
-
-function logout(){
-  sessionStorage.removeItem('lotiam_auth');
-  showView('pub');
-}
-
-// ── NAVEGAÇÃO ─────────────────────────────────────────────────────────────────
+function logout(){sessionStorage.removeItem('lotiam_auth');showView('pub');}
 function showView(v){
   document.getElementById('view-pub').style.display=v==='pub'?'block':'none';
   document.getElementById('view-priv').style.display=v==='priv'?'block':'none';
   document.getElementById('btn-pub').className='nav-tab '+(v==='pub'?'on':'off');
   document.getElementById('btn-priv').className='nav-tab '+(v==='priv'?'on':'off');
 }
-
-// ── TABS PRODUTO ──────────────────────────────────────────────────────────────
-const PC={t:'#12C6D8',l:'#0077C8',o:'#0077C8'};
+const PC={t:'#064650',l:'#064650',o:'#064650'};
 function switchP(p){
   ['t','l','o'].forEach(id=>{
     document.getElementById('det-'+id).style.display=id===p?'block':'none';
@@ -479,19 +527,8 @@ function switchP(p){
     tab.style.color=id===p?'#fff':'#6b7b8c';
   });
 }
-
-// ── GOOGLE SHEETS (atualização automática da vista pública) ───────────────────
 const SHEET='https://docs.google.com/spreadsheets/d/e/2PACX-1vRgWvFMdG8qluiTxKjvcXMjQcrh2gB4LklvQX-gPFRq3hxA8JKAP0lpVMBzNInSHVAJu5Hjd59OIEUz/pub?gid=0&single=true&output=csv';
-
-function parseCSV(t){
-  const m={};
-  t.trim().split('\n').forEach(r=>{
-    const c=r.split(',');
-    if(c.length>=2){const k=c[0].trim().replace(/"/g,'');const v=c.slice(1).join(',').trim().replace(/"/g,'');m[k]=v;}
-  });
-  return m;
-}
-
+function parseCSV(t){const m={};t.trim().split('\n').forEach(r=>{const c=r.split(',');if(c.length>=2){const k=c[0].trim().replace(/"/g,'');const v=c.slice(1).join(',').trim().replace(/"/g,'');m[k]=v;}});return m;}
 async function loadData(){
   try{
     const res=await fetch(SHEET+'&t='+Date.now());
@@ -503,22 +540,8 @@ async function loadData(){
     const kvals=document.querySelectorAll('.kpi-val');
     const kkeys=['utilizadores_ativos','receita_total','paises','produtos_vivos'];
     kvals.forEach((el,i)=>{if(d[kkeys[i]])el.textContent=d[kkeys[i]];});
-    const tr=document.querySelectorAll('.pcard:nth-child(1) .prow span:last-child');
-    if(tr[0]&&d.triply_ativos_28d)tr[0].textContent=d.triply_ativos_28d;
-    if(tr[1]&&d.triply_paises)tr[1].textContent=d.triply_paises;
-    if(tr[2]&&d.triply_receita)tr[2].textContent=d.triply_receita;
-    const detT=document.querySelectorAll('#det-t .dcell-v');
-    if(detT[0]&&d.triply_ativos_28d)detT[0].textContent=d.triply_ativos_28d;
-    if(detT[1]&&d.triply_novos)detT[1].textContent=d.triply_novos;
-    if(detT[4]&&d.triply_receita)detT[4].textContent=d.triply_receita;
-    if(d.data_update){
-      document.querySelectorAll('.footer span').forEach(el=>{
-        if(el.textContent.includes('Data updated'))el.textContent='Built solo · Zero external funding · Data updated '+d.data_update;
-      });
-    }
   }catch(e){console.warn('Sheet load failed:',e);}
 }
-
 loadData();
 </script>
 </body>
