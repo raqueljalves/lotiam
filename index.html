@@ -9,9 +9,9 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --green:#064650;
-      --green-light:#0a5f6e;
-      --green-dark:#043038;
+      --green:#3d4a2a;
+      --green-light:#56693c;
+      --green-dark:#262e1a;
       --gold:#D4941A;
       --gold-light:#f5c842;
       --gray:#f4f7fa;
@@ -36,7 +36,7 @@
     .nav-tab.off:hover{background:rgba(255,255,255,.25)}
 
     /* LOGIN */
-    .login-overlay{position:fixed;inset:0;background:rgba(4,48,56,.95);z-index:200;display:flex;align-items:center;justify-content:center}
+    .login-overlay{position:fixed;inset:0;background:rgba(38,46,26,.95);z-index:200;display:flex;align-items:center;justify-content:center}
     .login-box{background:var(--white);border-radius:20px;padding:40px;width:100%;max-width:380px;text-align:center}
     .login-logo{margin-bottom:20px}
     .login-logo img{width:64px;height:64px;border-radius:16px}
@@ -118,24 +118,6 @@
     .td-num{font-weight:700;color:var(--green)}
     .td-gold{font-weight:700;color:var(--gold)}
 
-    /* BAR */
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
-    .panel{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px}
-    .panel-title{font-size:12px;font-weight:700;color:var(--green);margin-bottom:14px}
-    .bar-row{display:flex;align-items:center;padding:4px 0;font-size:12px}
-    .bar-label{width:110px;color:#5a6675;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:400}
-    .bar-wrap{flex:1;height:5px;background:#f0f3f5;border-radius:3px;margin:0 10px}
-    .bar-fill{height:5px;border-radius:3px;background:var(--gold)}
-    .bar-num{width:22px;text-align:right;color:var(--muted);font-size:11px;font-weight:600}
-    .rev-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f5f7f8;gap:8px}
-    .rev-row:last-of-type{border:none}
-    .rev-desc{font-size:12px;color:#444;flex:1;font-weight:500}
-    .rev-meta{font-size:10px;color:var(--muted);margin-top:2px;font-weight:400}
-    .rev-right{display:flex;align-items:center;gap:6px;white-space:nowrap}
-    .rev-amt{font-size:13px;font-weight:800;color:var(--green)}
-    .rev-tag{font-size:9px;padding:2px 7px;border-radius:8px;font-weight:700}
-    .rev-total{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:2px solid var(--border)}
-
     /* FOOTER */
     .footer{text-align:center;padding:32px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:var(--white);margin-top:20px;font-weight:400;line-height:2}
     .footer strong{color:var(--green);font-weight:800}
@@ -145,16 +127,12 @@
     .footer-email{display:flex;align-items:center;gap:6px;font-size:12px}
 
     /* DASHBOARD */
-    .priv-wrap{max-width:960px;margin:0 auto;padding:24px 20px}
+    .priv-wrap{max-width:1200px;margin:0 auto;padding:24px 20px}
     .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
     .dash-title{font-size:16px;font-weight:800;color:var(--green)}
     .dash-sub{font-size:11px;color:var(--muted);margin-top:2px}
     .logout-btn{padding:6px 14px;border-radius:14px;border:1px solid var(--border);background:var(--white);color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif}
     .logout-btn:hover{border-color:var(--green);color:var(--green)}
-    .kpi4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
-    .kpi{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:16px}
-    .kpi-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;font-weight:600}
-    .kpi-val{font-size:22px;font-weight:800;color:var(--green)}
 
     /* LOOKER */
     .looker-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;background:var(--white)}
@@ -163,35 +141,13 @@
     .looker-head-sub{font-size:11px;color:rgba(255,255,255,.6)}
     .looker-head a{font-size:11px;color:var(--gold);text-decoration:none;font-weight:600}
 
-    /* ALERTS */
-    .alerts{background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden}
-    .alerts-h{padding:13px 18px;border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--green);background:#f8fafa}
-    .alert-row{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid #f5f7f8;font-size:12px}
-    .alert-row:last-child{border:none}
-    .a-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
-    .a-text{flex:1;color:#444;font-weight:400}
-    .a-time{font-size:10px;color:var(--muted);white-space:nowrap}
-
-    /* PROD TABS */
-    .prod-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-    .ptab{padding:7px 16px;border-radius:16px;border:none;cursor:pointer;font-size:12px;font-weight:600;transition:all .15s;font-family:'Poppins',sans-serif}
-    .detail{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
-    .detail-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-    .dcell{padding:14px 18px;border-right:1px solid #f5f7f8;border-bottom:1px solid #f5f7f8}
-    .dcell:nth-child(3n){border-right:none}
-    .dcell:nth-child(n+4){border-bottom:none}
-    .dcell-l{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:500}
-    .dcell-v{font-size:15px;font-weight:800;color:var(--green)}
-
     /* RESPONSIVE */
     @media(max-width:640px){
-      .m4,.kpi4{grid-template-columns:repeat(2,1fr)}
+      .m4{grid-template-columns:repeat(2,1fr)}
       .p3{grid-template-columns:1fr}
-      .two{grid-template-columns:1fr}
       .t-grid{grid-template-columns:repeat(2,1fr)}
       .t-item{border-right:none;border-bottom:1px solid var(--border);padding:12px 0}
       .t-item:last-child{border:none}
-      .detail-grid{grid-template-columns:repeat(2,1fr)}
       .hero-name{font-size:38px}
       .nav{padding:12px 16px}
     }
@@ -202,7 +158,7 @@
 <!-- LOGIN -->
 <div class="login-overlay" id="login-overlay" style="display:none">
   <div class="login-box">
-    <div class="login-logo"><img src="logo.png" alt="Lotiam"/></div>
+    <div class="login-logo"><img src="logo.jpg" alt="Lotiam"/></div>
     <div class="login-title">Internal Dashboard</div>
     <div class="login-sub">Restricted access · Authorized users only</div>
     <input class="login-input" type="password" id="pass-input" placeholder="Password" onkeydown="if(event.key==='Enter')checkPass()"/>
@@ -215,7 +171,7 @@
 <!-- NAV -->
 <nav class="nav">
   <a class="logo-wrap" href="#" onclick="showView('pub')">
-    <img class="logo-img" src="logo.png" alt="Lotiam logo"/>
+    <img class="logo-img" src="logo.jpg" alt="Lotiam logo"/>
     <div class="logo-text-wrap">
       <div class="logo-name">Lotiam</div>
       <div class="logo-sub">An Ecosystem Built for Solutions</div>
@@ -232,7 +188,7 @@
 
   <div class="hero">
     <div class="hero-logo">
-      <img src="logo.png" alt="Lotiam" style="width:90px;height:90px;border-radius:22px;box-shadow:0 20px 40px -16px rgba(0,0,0,.4)"/>
+      <img src="logo.jpg" alt="Lotiam" style="width:90px;height:90px;border-radius:22px;box-shadow:0 20px 40px -16px rgba(0,0,0,.4)"/>
       <div class="hero-name">Lotiam</div>
       <div class="hero-tagline">An Ecosystem Built for Solutions</div>
     </div>
@@ -247,11 +203,11 @@
   <div class="transmite">
     <div class="t-title">What We Stand For · Lotiam</div>
     <div class="t-grid">
-      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.7 2.8 2.7 14 0 16.8M12 3.6c-2.7 2.8-2.7 14 0 16.8"/></svg></div><div class="t-name">Ecossistema Global & Integrado</div><div class="t-desc">Connects and manages all 3 products as one.</div></div>
-      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" r="3.1"/><path d="M3.7 19c0-3.2 2.4-5.3 5.3-5.3s5.3 2.1 5.3 5.3"/><path d="M16 5.5a3 3 0 0 1 0 5.4M17.4 13.6c2.2.5 3.9 2.3 3.9 5"/></svg></div><div class="t-name">Personal Focus &amp; Empowerment</div><div class="t-desc">Empowers users through intuitive solutions.</div></div>
-      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4M4 20h16M7 15.5l3.6-4 3 2.6L20 7M16.4 7H20v3.4"/></svg></div><div class="t-name">Sustainable Growth</div><div class="t-desc">Drives transparent and scalable results.</div></div>
-      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.5" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M7.5 15.7 10.9 7.9M13.1 7.9 16.5 15.7M8.2 17.5h7.6"/></svg></div><div class="t-name">Digital Innovation</div><div class="t-desc">Smart and efficient connections between tools.</div></div>
-      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064650" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#064650" stroke="none"/></svg></div><div class="t-name">Clear Purpose</div><div class="t-desc">Efficiency and quality with real impact.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d4a2a" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.7 2.8 2.7 14 0 16.8M12 3.6c-2.7 2.8-2.7 14 0 16.8"/></svg></div><div class="t-name">Ecossistema Global & Integrado</div><div class="t-desc">Connects and manages all 3 products as one.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d4a2a" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="8" r="3.1"/><path d="M3.7 19c0-3.2 2.4-5.3 5.3-5.3s5.3 2.1 5.3 5.3"/><path d="M16 5.5a3 3 0 0 1 0 5.4M17.4 13.6c2.2.5 3.9 2.3 3.9 5"/></svg></div><div class="t-name">Personal Focus &amp; Empowerment</div><div class="t-desc">Empowers users through intuitive solutions.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d4a2a" stroke-width="1.5" stroke-linecap="round"><path d="M4 20V4M4 20h16M7 15.5l3.6-4 3 2.6L20 7M16.4 7H20v3.4"/></svg></div><div class="t-name">Sustainable Growth</div><div class="t-desc">Drives transparent and scalable results.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d4a2a" stroke-width="1.5" stroke-linecap="round"><circle cx="6" cy="17.5" r="2.2"/><circle cx="12" cy="6" r="2.2"/><circle cx="18" cy="17.5" r="2.2"/><path d="M7.5 15.7 10.9 7.9M13.1 7.9 16.5 15.7M8.2 17.5h7.6"/></svg></div><div class="t-name">Digital Innovation</div><div class="t-desc">Smart and efficient connections between tools.</div></div>
+      <div class="t-item"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3d4a2a" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="#3d4a2a" stroke="none"/></svg></div><div class="t-name">Clear Purpose</div><div class="t-desc">Efficiency and quality with real impact.</div></div>
     </div>
   </div>
 
@@ -354,13 +310,6 @@
       <button class="logout-btn" onclick="logout()">Log out →</button>
     </div>
 
-    <div class="kpi4">
-      <div class="kpi"><div class="kpi-label">Total Users</div><div class="kpi-val">172</div></div>
-      <div class="kpi"><div class="kpi-label">Confirmed Revenue</div><div class="kpi-val">$31.86</div></div>
-      <div class="kpi"><div class="kpi-label">Countries</div><div class="kpi-val">8+</div></div>
-      <div class="kpi"><div class="kpi-label">Live Products</div><div class="kpi-val">3/3</div></div>
-    </div>
-
     <!-- LOOKER -->
     <div class="looker-wrap">
       <div class="looker-head">
@@ -370,123 +319,7 @@
         </div>
         <a href="https://datastudio.google.com/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083" target="_blank">Open full screen ↗</a>
       </div>
-      <iframe width="100%" height="500" src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F" frameborder="0" style="border:0;display:block" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
-    </div>
-
-    <!-- ALERTAS -->
-    <div class="alerts">
-      <div class="alerts-h">⚡ Recent Activity</div>
-      <div class="alert-row"><div class="a-icon" style="background:#e8f5e9">💰</div><div class="a-text">Commission confirmed · $2.32 · Excursão Ibiza · Booking</div><div class="a-time">Abr 2026</div></div>
-      <div class="alert-row"><div class="a-icon" style="background:#e3f2fd">👤</div><div class="a-text">134 new users on Triply · last 28 days</div><div class="a-time">Jun 2026</div></div>
-      <div class="alert-row"><div class="a-icon" style="background:#fff8e1">🏁</div><div class="a-text">OnFoot approved for production · Play Store</div><div class="a-time">Jun 2026</div></div>
-      <div class="alert-row"><div class="a-icon" style="background:#e8f5e9">💰</div><div class="a-text">Harry Potter Tokyo · $7.94 · GetYourGuide confirmado</div><div class="a-time">Mai 2026</div></div>
-      <div class="alert-row"><div class="a-icon" style="background:#e3f2fd">👤</div><div class="a-text">21 Laura users · Google Ads test in 1 day</div><div class="a-time">Mai 2026</div></div>
-    </div>
-
-    <!-- TABELA INTERNA ESTILO GEMINI -->
-    <div class="gtable-wrap" style="margin-bottom:20px">
-      <div class="gtable-head">
-        <div>
-          <div class="gtable-head-title">Detailed Status · All Products</div>
-          <div class="gtable-head-sub">Manual data · update as needed</div>
-        </div>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Utilizadores</th>
-            <th>Revenue</th>
-            <th>Main Channel</th>
-            <th>Last Update</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><div class="td-product"><div class="td-icon" style="background:#e8f5f5">🧭</div><div><div class="td-name">Triply</div><div class="td-sub">triply.now</div></div></div></td>
-            <td><span class="td-num">139</span></td>
-            <td><span class="td-gold">$31.86</span></td>
-            <td style="font-size:12px;color:var(--muted)">Organic</td>
-            <td style="color:var(--muted);font-size:12px">Jun 28, 2026</td>
-            <td><span class="td-status status-growth">Growing</span></td>
-          </tr>
-          <tr>
-            <td><div class="td-product"><div class="td-icon" style="background:#f0f4ff">💬</div><div><div class="td-name">Laura AI</div><div class="td-sub">someonetolisten.me</div></div></div></td>
-            <td><span class="td-num">21</span></td>
-            <td style="font-size:12px;color:var(--muted)">€3.99/mês</td>
-            <td style="font-size:12px;color:var(--muted)">Google Ads</td>
-            <td style="color:var(--muted);font-size:12px">Mai 2026</td>
-            <td><span class="td-status status-live">Live</span></td>
-          </tr>
-          <tr>
-            <td><div class="td-product"><div class="td-icon" style="background:#fff5e8">👣</div><div><div class="td-name">OnFoot</div><div class="td-sub">Play Store · Android</div></div></div></td>
-            <td><span class="td-num">12</span></td>
-            <td style="font-size:12px;color:var(--muted)">Coming soon</td>
-            <td style="font-size:12px;color:var(--muted)">Play Store</td>
-            <td style="color:var(--muted);font-size:12px">Jul 1, 2026</td>
-            <td><span class="td-status status-launch">Lançamento</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- TABS POR PRODUTO -->
-    <div class="prod-tabs">
-      <button class="ptab" id="tab-t" style="background:#064650;color:#fff" onclick="switchP('t')">Triply</button>
-      <button class="ptab" id="tab-l" style="background:#f4f7fa;color:#6b7b8c" onclick="switchP('l')">Laura AI</button>
-      <button class="ptab" id="tab-o" style="background:#f4f7fa;color:#6b7b8c" onclick="switchP('o')">OnFoot</button>
-    </div>
-
-    <div class="detail" id="det-t">
-      <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Active Users (28d)</div><div class="dcell-v" style="color:var(--gold)">139</div></div>
-        <div class="dcell"><div class="dcell-l">New Users</div><div class="dcell-v">134</div></div>
-        <div class="dcell"><div class="dcell-l">Countries</div><div class="dcell-v">8+</div></div>
-        <div class="dcell"><div class="dcell-l">Avg. Session Time</div><div class="dcell-v">1m 19s</div></div>
-        <div class="dcell"><div class="dcell-l">Receita afiliados</div><div class="dcell-v" style="color:var(--gold)">$31.86</div></div>
-        <div class="dcell"><div class="dcell-l">Acquisition Cost</div><div class="dcell-v">$0</div></div>
-      </div>
-    </div>
-    <div class="detail" id="det-l" style="display:none">
-      <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Test Users</div><div class="dcell-v" style="color:var(--gold)">21</div></div>
-        <div class="dcell"><div class="dcell-l">Speed</div><div class="dcell-v">21 / 1 dia</div></div>
-        <div class="dcell"><div class="dcell-l">Validated Channel</div><div class="dcell-v">Google Ads</div></div>
-        <div class="dcell"><div class="dcell-l">Monthly Plan</div><div class="dcell-v">€3.99</div></div>
-        <div class="dcell"><div class="dcell-l">Annual Plan</div><div class="dcell-v">€31.99</div></div>
-        <div class="dcell"><div class="dcell-l">AI Engine</div><div class="dcell-v">Claude API</div></div>
-      </div>
-    </div>
-    <div class="detail" id="det-o" style="display:none">
-      <div class="detail-grid">
-        <div class="dcell"><div class="dcell-l">Daily Testers</div><div class="dcell-v" style="color:var(--gold)">12</div></div>
-        <div class="dcell"><div class="dcell-l">Estado</div><div class="dcell-v">Production</div></div>
-        <div class="dcell"><div class="dcell-l">Plataforma</div><div class="dcell-v">Android</div></div>
-        <div class="dcell"><div class="dcell-l">Mapas</div><div class="dcell-v">Mapbox</div></div>
-        <div class="dcell"><div class="dcell-l">Differentiator</div><div class="dcell-v">Safety score</div></div>
-        <div class="dcell"><div class="dcell-l">Next Step</div><div class="dcell-v">Real users</div></div>
-      </div>
-    </div>
-
-    <div class="two">
-      <div class="panel">
-        <div class="panel-title">Triply — Acquisition Channels</div>
-        <div class="bar-row"><span class="bar-label">Direct</span><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><span class="bar-num">99</span></div>
-        <div class="bar-row"><span class="bar-label">Organic Social</span><div class="bar-wrap"><div class="bar-fill" style="width:48%"></div></div><span class="bar-num">48</span></div>
-        <div class="bar-row"><span class="bar-label">Organic Search</span><div class="bar-wrap"><div class="bar-fill" style="width:47%"></div></div><span class="bar-num">47</span></div>
-        <div class="bar-row"><span class="bar-label">Referral</span><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div><span class="bar-num">13</span></div>
-        <div class="bar-row"><span class="bar-label">AI Assistant</span><div class="bar-wrap"><div class="bar-fill" style="width:4%"></div></div><span class="bar-num">4</span></div>
-        <div class="bar-row"><span class="bar-label">Paid Search</span><div class="bar-wrap"><div class="bar-fill" style="width:1%"></div></div><span class="bar-num">1</span></div>
-      </div>
-      <div class="panel">
-        <div class="panel-title">Revenue · Full History</div>
-        <div class="rev-row"><div><div class="rev-desc">Pousada Salvador, Brasil</div><div class="rev-meta">Booking · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$21.52</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Harry Potter Tokyo</div><div class="rev-meta">GYG · Fev 2026</div></div><div class="rev-right"><span class="rev-amt">$7.94</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Excursão Ibiza</div><div class="rev-meta">Booking · Abr 2026</div></div><div class="rev-right"><span class="rev-amt">$2.32</span><span class="rev-tag" style="background:#e8f5e9;color:#2e7d32">ready</span></div></div>
-        <div class="rev-row"><div><div class="rev-desc">Kayak CPC</div><div class="rev-meta">Kayak · Jun 2026</div></div><div class="rev-right"><span class="rev-amt">$0.08</span><span class="rev-tag" style="background:#fff8e1;color:#f57f17">pending</span></div></div>
-        <div class="rev-total"><span style="font-weight:700;color:var(--green)">Total</span><span style="font-size:16px;font-weight:800;color:var(--gold)">$31.86</span></div>
-      </div>
+      <iframe width="100%" height="900" src="https://datastudio.google.com/embed/reporting/3e16bbe2-58de-45e8-b528-a8ea36648083/page/A4m2F" frameborder="0" style="border:0;display:block" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     </div>
 
   </div>
@@ -519,15 +352,6 @@ function showView(v){
   document.getElementById('btn-pub').className='nav-tab '+(v==='pub'?'on':'off');
   document.getElementById('btn-priv').className='nav-tab '+(v==='priv'?'on':'off');
 }
-const PC={t:'#064650',l:'#064650',o:'#064650'};
-function switchP(p){
-  ['t','l','o'].forEach(id=>{
-    document.getElementById('det-'+id).style.display=id===p?'block':'none';
-    const tab=document.getElementById('tab-'+id);
-    tab.style.background=id===p?PC[id]:'#f4f7fa';
-    tab.style.color=id===p?'#fff':'#6b7b8c';
-  });
-}
 const SHEET='https://docs.google.com/spreadsheets/d/e/2PACX-1vRgWvFMdG8qluiTxKjvcXMjQcrh2gB4LklvQX-gPFRq3hxA8JKAP0lpVMBzNInSHVAJu5Hjd59OIEUz/pub?gid=0&single=true&output=csv';
 function parseCSV(t){const m={};t.trim().split('\n').forEach(r=>{const c=r.split(',');if(c.length>=2){const k=c[0].trim().replace(/"/g,'');const v=c.slice(1).join(',').trim().replace(/"/g,'');m[k]=v;}});return m;}
 async function loadData(){
@@ -538,9 +362,6 @@ async function loadData(){
     const mvals=document.querySelectorAll('.mcard-val');
     const mkeys=['utilizadores_ativos','paises','receita_total','produtos_vivos'];
     mvals.forEach((el,i)=>{if(d[mkeys[i]])el.textContent=d[mkeys[i]];});
-    const kvals=document.querySelectorAll('.kpi-val');
-    const kkeys=['utilizadores_ativos','receita_total','paises','produtos_vivos'];
-    kvals.forEach((el,i)=>{if(d[kkeys[i]])el.textContent=d[kkeys[i]];});
   }catch(e){console.warn('Sheet load failed:',e);}
 }
 loadData();
